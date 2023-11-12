@@ -1,25 +1,30 @@
-import logo from './logo.svg';
+// src/App.js
+
+import React from 'react';
+import Hero from './components/Hero/Hero';
+import TravelBlog from './components/TravelBlog/TravelBlog';
+import TravelData from './TravelData';
 import './App.css';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Hero
+        backgroundImage="https://example.com/hero-image.jpg"
+        heading="Adventure Awaits"
+        subHeading="Explore the Beauty of the World"
+        pageDescription="Take a look at some of the amazing locations below!"
+      />
+      {TravelData.map((place, index) => (
+        <TravelBlog
+          key={index}
+          place={place.placeHeading}
+          images={place.images}
+          description={place.placeDescription}
+        />
+      ))}
     </div>
   );
-}
+};
 
 export default App;
