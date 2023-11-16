@@ -1,30 +1,30 @@
 // src/App.js
 
-import React from 'react';
-import Hero from './components/Hero/Hero';
-import TravelBlog from './components/TravelBlog/TravelBlog';
-import TravelData from './TravelData';
+import React, { useState } from 'react';
 import './App.css';
 
-const App = () => {
+function App() {
+  const [count, setCount] = useState(0);
+
+  const increment = () => {
+    setCount(count + 1);
+  };
+
+  const decrement = () => {
+    setCount(count - 1);
+  };
+
   return (
-    <div>
-      <Hero
-        backgroundImage="https://example.com/hero-image.jpg"
-        heading="Adventure Awaits"
-        subHeading="Explore the Beauty of the World"
-        pageDescription="Take a look at some of the amazing locations below!"
-      />
-      {TravelData.map((place, index) => (
-        <TravelBlog
-          key={index}
-          place={place.placeHeading}
-          images={place.images}
-          description={place.placeDescription}
-        />
-      ))}
+    <div className="App">
+      <h1>Amazing Counter App</h1>
+      <p>The Current Count: {count}</p>
+      <div className="buttons-container">
+        <button onClick={increment}>Increment</button>
+        <button onClick={decrement}>Decrement</button>
+      </div>
     </div>
   );
-};
+}
 
 export default App;
+
