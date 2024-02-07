@@ -1,3 +1,5 @@
+![TravelAgency](https://github.com/Khiele/Travel-Agency/assets/113948654/f22692b6-580a-45c9-9e8f-a649bf74993b)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
